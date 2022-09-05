@@ -12,9 +12,7 @@ describe('books app basic tests', () => {
     cy.get('.text-light').should('be.visible')
   });
 
-  it("Should successfully login",
-   () => {
-    
+  it("Should successfully login", () => {    
     cy.visit("/booksNode");
     cy.login(login, password);
     cy.contains(`Добро пожаловать ${login}`).should("be.visible");
@@ -70,5 +68,4 @@ describe('books app basic tests', () => {
       .then(($el) => $el[0].validationMessage)
       .should("contain", "Заполните это поле");
   })
-
 })
